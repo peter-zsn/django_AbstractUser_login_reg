@@ -13,7 +13,6 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     name = models.CharField(u'用户姓名', max_length=10)
     relpwd = models.IntegerField(u'明文密码')
-    # password = models.IntegerField(u'明文密码')
 
     class Meta:
         db_table = 'user'
