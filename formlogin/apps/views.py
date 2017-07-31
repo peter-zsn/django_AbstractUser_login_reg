@@ -7,7 +7,7 @@
 @time: 2017/7/27 11:36
 """
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import login, authenticate, logout
 import datetime
 
@@ -67,3 +67,7 @@ def user_reg(request):
             else:
                 return HttpResponse(u'注册失败')
     return render_template(request, 'reg.html', data)
+
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/')

@@ -5,6 +5,7 @@
 {% block body %}
 <form role="form" id="form" action="/login/" method="post"  >
      <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+    {% csrf_token %}
      <dl class="admin_login">
         <dt>
             <strong>中国有嘻哈官方登陆</strong>

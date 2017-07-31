@@ -12,6 +12,7 @@ $('#submit_btn').click(function () {
     $('#form').ajaxSubmit(function (data) {
         $('#submit_btn').attr('disabled', false);
             alert(data);
+            location.href = '/';
     });
 });
 

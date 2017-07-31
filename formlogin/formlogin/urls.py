@@ -27,4 +27,5 @@ urlpatterns += [
     url(r'^$', views.index),
     url(r'^login/$', views.user_login),
     url(r'^reg/$', views.user_reg),
+    url(r'^logout/$', views.user_logout),
 ]

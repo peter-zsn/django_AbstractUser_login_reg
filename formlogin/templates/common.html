@@ -22,6 +22,7 @@
         </div>
     </div>
     <div class="blocks">
+    {% if not request.user.id %}
       <div class="block">
         <div class="overlay">
           <p class="login">登陆</p>
@@ -34,8 +35,16 @@
         </div>
         <img src="/media/image/3.jpg/" alt="Image" />
       </div>
+    {% else %}
+    {{ request.user.username }}
+        <div class="block">
+        <div class="overlay">
+          <a href="/logout/">注销</a>
+        </div>
+        <img src="/media/image/3.jpg/" alt="Image" />
+      </div>
+    {% endif %}
     </div>
-
     {% block body%}{% endblock %}
     <script src="/media/js/jquery-3.2.1.min.js"></script>
     <script src="/media/js/animatext.min.js"></script>
