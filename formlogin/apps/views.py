@@ -18,6 +18,8 @@ from libs.models.account.models import User, UserInfo
 
 def index(request):
     data = {}
+    print request.user.id
+    print request.session.get('username', '')
     return render_template(request, 'common.html', data)
 
 def user_login(request):
@@ -32,6 +34,7 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
+                request.session['username'] = username
                 return HttpResponse(u'登陆成功')
             else:
                 return HttpResponse(u'账号密码错误')
